@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return "hello"
+	return render_template("index.html")
+    
+@app.route('/')
+def python():
+	return render_template("python.html")
+    
+@app.route('/')
+def linus():
+	return render_template("linus.html")
 
 @app.route('/whereami')
 def whereami():
